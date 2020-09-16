@@ -13,5 +13,4 @@ use Illuminate\Http\Request;
 |
 */
 Route::apiResource("cliente", "ClienteController");
-Route::apiResource("cliente/{cliente}", "ClienteController");
 Route::apiResource("agenda", "AgendaController");
