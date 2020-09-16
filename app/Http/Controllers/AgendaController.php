@@ -41,21 +41,30 @@ class AgendaController extends Controller
             "asunto" => "max:300",
             "estado" => "required|max:1",
         ];
-
         $validator = \Validator::make($request->all(), $rules);
+        $respuesta = array();
         if ($validator->fails()){
-            return [
+            $respuesta = [
                     "created" => "false",
                     "message" => "Error al guardar los datos de la agenda",
                     "errors" => $validator->errors()->all()
                 ];
         }else{
-            return [
-                "created" => "true",
-                "message" => "datos almacenados correctamente",
-                "data" => Agenda::create($request->all())
-            ];
+            $estado =strtoupper($request['estado']);
+            if( $estado == 'P' || $estado == 'R' ||$estado == 'C' ||$estado == 'N' ) {
+                $respuesta = [
+                    "created" => "true",
+                    "message" => "datos almacenados correctamente",
+                    "data" => Agenda::create($request->all())
+                ];
+            }else {
+                $respuesta = [
+                    "created" => "false",
+                    "message" => "Error al guardar los datos de la agenda, estado '{$request['estado']}' no valido"
+                ];
+            }
         }
+        return $respuesta;
     }
 
     /**
@@ -89,7 +98,41 @@ class AgendaController extends Controller
      */
     public function update(Request $request, Agenda $agenda)
     {
-        //
+        $rules = [
+            "idCliente" => "required",
+            "asunto" => "max:300",
+            "estado" => "required|max:1",
+        ];
+        $validator = \Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            $respuesta = [
+                "created" => "false",
+                "message" => "Error al guardar los datos de la agenda",
+                "errors" => $validator->errors()->all()
+            ];
+        }else{
+            $agendaArray = Agenda::findOrFail($agenda)->first();
+            $respuesta = array();
+            if ($agendaArray != null) {
+                $estado = strtoupper($request['estado']);
+                if( $estado == 'P' || $estado == 'R' ||$estado == 'C' ||$estado == 'N' ) {
+                    if (strtoupper($agendaArray['estado']) != 'P') {
+                        $respuesta = ["message" => "Datos actualizados correctamente"];
+                        $agendaArray->fill($request->all())->save();
+                    } else {
+                        $respuesta = ["message" => "error al actualizar los datos, el estado de la agenda es Programada y en este estado no se puede realizar el cambio"];
+                    }
+                }else {
+                    $respuesta = [
+                        "created" => "false",
+                        "message" => "Error al guardar los datos de la agenda, estado '{$request['estado']}' no valido"
+                    ];
+                }
+            } else {
+                $respuesta = ["message" => "error al actualizar los datos", "array" => $request->all()];
+            }
+        }
+        return $respuesta;
     }
 
     /**
