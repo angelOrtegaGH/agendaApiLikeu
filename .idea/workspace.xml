@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d0371c6-c2a9-4a2f-97ef-1827eae0809d" name="Default Changelist" comment="" />
+    <list default="true" id="1d0371c6-c2a9-4a2f-97ef-1827eae0809d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +15,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -106,6 +114,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1hYkjtKi3zqQGY08AZ5u7tPMP2A" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -133,10 +142,27 @@
       <updated>1600195580039</updated>
       <workItem from="1600195592500" duration="6374000" />
       <workItem from="1600202282823" duration="6666000" />
+      <workItem from="1600221486481" duration="156000" />
+      <workItem from="1600221670231" duration="6220000" />
+      <workItem from="1600267752017" duration="17079000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600276539967">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1600276539967" />
+    <state x="1439" y="0" width="928" height="456" maximized="true" key="dock-window-1" timestamp="1600225978681">
+      <screen x="1366" y="0" width="1024" height="728" />
+    </state>
+    <state x="1439" y="0" width="928" height="456" maximized="true" key="dock-window-1/0.0.1366.728/1366.0.1024.728@0.0.1366.728" timestamp="1600225978681" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600282526600">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1600282526600" />
   </component>
 </project>
