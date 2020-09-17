@@ -111,7 +111,7 @@ class AgendaController extends Controller
                 "errors" => $validator->errors()->all()
             ];
         }else{
-            $agendaArray = Agenda::findOrFail($agenda)->first();
+            $agendaArray = Agenda::where("id",$agenda['id'])->first();
             $respuesta = array();
             if ($agendaArray != null) {
                 $estado = strtoupper($request['estado']);
@@ -120,7 +120,7 @@ class AgendaController extends Controller
                         $respuesta = ["message" => "Datos actualizados correctamente"];
                         $agendaArray->fill($request->all())->save();
                     } else {
-                        $respuesta = ["message" => "error al actualizar los datos, el estado de la agenda es Programada y en este estado no se puede realizar el cambio"];
+                        $respuesta = ["message" => "error al actualizar los datos, solo es posible actualizar la agenda en estado programado"];
                     }
                 }else {
                     $respuesta = [
