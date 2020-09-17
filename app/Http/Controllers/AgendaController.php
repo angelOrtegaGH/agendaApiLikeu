@@ -116,7 +116,7 @@ class AgendaController extends Controller
             if ($agendaArray != null) {
                 $estado = strtoupper($request['estado']);
                 if( $estado == 'P' || $estado == 'R' ||$estado == 'C' ||$estado == 'N' ) {
-                    if (strtoupper($agendaArray['estado']) != 'P') {
+                    if (strtoupper($agendaArray['estado']) == 'P') {
                         $respuesta = ["message" => "Datos actualizados correctamente"];
                         $agendaArray->fill($request->all())->save();
                     } else {
